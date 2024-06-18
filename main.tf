@@ -7,3 +7,9 @@ module "aws" {
   az_2     = var.az_2
   region   = var.region
 }
+
+
+module "docker" {
+  source = "./modules/docker"
+  region = var.region
+}
