@@ -1,9 +1,9 @@
 module "aws" {
   source   = "./modules/aws"
-  vpc-cidr  = var.vpc-cidr
-  subnet-A = var.subnet-A
-  subnet-B = var.subnet-B
-  az-1     = var.az-1
-  az-2     = var.az-2
+  vpc_cidr = var.vpc_cidr
+  subnet_A = var.subnet_A
+  subnet_B = var.subnet_B
+  az_1     = var.az_1
+  az_2     = var.az_2
   region   = var.region
 }

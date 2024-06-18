@@ -1,21 +1,21 @@
-variable "vpc-cidr" {
+variable "vpc_cidr" {
   type = string  
 }
 
-variable "subnet-A" {
+variable "subnet_A" {
   type = string
 }
 
-variable "subnet-B" {
+variable "subnet_B" {
 
   type = string
 }
 
-variable "az-1" {
+variable "az_1" {
   type = string  
 }
 
-variable "az-2" {
+variable "az_2" {
   type = string  
 }
 

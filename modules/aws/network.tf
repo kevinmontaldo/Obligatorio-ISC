@@ -1,5 +1,5 @@
-resource "aws_vpc" "vpc-obligatorio" {
-  cidr_block           = var.vpc-cidr
+resource "aws_vpc" "vpc_obligatorio" {
+  cidr_block           = var.vpc_cidr
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
@@ -7,37 +7,39 @@ resource "aws_vpc" "vpc-obligatorio" {
   }
 }
 
-resource "aws_subnet" "subnet-A-obligatorio" {
-  vpc_id                  = aws_vpc.vpc-obligatorio.id 
-  cidr_block              = var.subnet-A         
-  availability_zone       = var.az-1          
+resource "aws_subnet" "subnet_A_obligatorio" {
+  vpc_id                  = aws_vpc.vpc_obligatorio.id 
+  cidr_block              = var.subnet_A         
+  availability_zone       = var.az_1          
   map_public_ip_on_launch = true
   tags = {
     Name = "subnet-A-obligatorio"
   }
 }
 
-resource "aws_subnet" "subnet-B-obligatorio" {
-  vpc_id                  = aws_vpc.vpc-obligatorio.id 
-  cidr_block              = var.subnet-B        
-  availability_zone       = var.az-2            
+resource "aws_subnet" "subnet_B_obligatorio" {
+  vpc_id                  = aws_vpc.vpc_obligatorio.id 
+  cidr_block              = var.subnet_B        
+  availability_zone       = var.az_2            
   map_public_ip_on_launch = true
   tags = {
     Name = "subnet-B-obligatorio"
   }
 }
-resource "aws_internet_gateway" "ig-obligatorio" {
-  vpc_id = aws_vpc.vpc-obligatorio.id
+resource "aws_internet_gateway" "ig_obligatorio" {
+  vpc_id = aws_vpc.vpc_obligatorio.id
 }
 
 
-resource "default_route_table" "default-route-table" {
-  default_route_table_id = aws_vpc.vpc-obligatorio.default_route_table_id
+resource "aws_route_table" "default_rt" {
+  vpc_id = aws_vpc.vpc_obligatorio.id
+
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.ig-obligatorio.id
+    gateway_id = aws_internet_gateway.ig_obligatorio.id
   }
+
   tags = {
-    Name = "default-route-table-obligatorio"
+    Name = "default_rt_obligatorio"
   }
 }

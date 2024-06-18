@@ -1,28 +1,28 @@
 variable "profile" {
-  type        = string
+  type = string
 }
 
 variable "region" {
-  type        = string
+  type = string
 }
 
-variable "vpc-cidr" {
-  type        = string
+variable "vpc_cidr" {
+  type = string
 }
 
-variable "subnet-A" {
+variable "subnet_A" {
 
-  type        = string
+  type = string
 }
 
-variable "subnet-B" {
-  type        = string
+variable "subnet_B" {
+  type = string
 }
 
-variable "az-1" {
-  type        = string
+variable "az_1" {
+  type = string
 }
 
-variable "az-2" {
-  type        = string
+variable "az_2" {
+  type = string
 }

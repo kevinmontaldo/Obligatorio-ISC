@@ -1,6 +1,6 @@
-resource "aws_security_group" "sg-obligatorio" {
-  name        = "sg-obligatorio"
-  vpc_id      = aws_vpc.vpc-obligatorio.id
+resource "aws_security_group" "sg_obligatorio" {
+  name        = "sg_obligatorio"
+  vpc_id      = aws_vpc.vpc_obligatorio.id
 
   ingress {
     description = "ssh"
