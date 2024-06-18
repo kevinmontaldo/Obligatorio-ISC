@@ -30,16 +30,8 @@ resource "aws_internet_gateway" "ig_obligatorio" {
   vpc_id = aws_vpc.vpc_obligatorio.id
 }
 
-
-resource "aws_route_table" "default_rt" {
-  vpc_id = aws_vpc.vpc_obligatorio.id
-
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.ig_obligatorio.id
-  }
-
-  tags = {
-    Name = "default_rt_obligatorio"
-  }
+resource "aws_route" "ruta_a_internet" {
+  route_table_id         = aws_vpc.vpc_obligatorio.main_route_table_id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = aws_internet_gateway.ig_obligatorio.id
 }
