@@ -13,3 +13,9 @@ module "docker" {
   source = "./modules/docker"
   region = var.region
 }
+module "kubernetes" {
+  source   = "./modules/kubernetes"
+  region   = var.region
+  depends_on = [module.docker]
+}
+

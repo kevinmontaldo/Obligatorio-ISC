@@ -13,7 +13,7 @@ resource "aws_subnet" "subnet_A_obligatorio" {
   availability_zone       = var.az_1          
   map_public_ip_on_launch = true
   tags = {
-    Name = "subnet-A-obligatorio"
+    Name = "subnet_A_obligatorio"
   }
 }
 
@@ -23,7 +23,7 @@ resource "aws_subnet" "subnet_B_obligatorio" {
   availability_zone       = var.az_2            
   map_public_ip_on_launch = true
   tags = {
-    Name = "subnet-B-obligatorio"
+    Name = "subnet_B_obligatorio"
   }
 }
 resource "aws_internet_gateway" "ig_obligatorio" {

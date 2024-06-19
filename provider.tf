@@ -4,6 +4,10 @@ terraform {
       source  = "kreuzwerker/docker"
       version = "3.0.2"
     }
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+      version = ">= 1.7.0"
+    }
   }
 }
 provider "aws" {
@@ -17,4 +21,6 @@ provider "docker" {
     username = data.aws_ecr_authorization_token.token.user_name
     password = data.aws_ecr_authorization_token.token.password
   }
+}
+provider "kubectl" {
 }
