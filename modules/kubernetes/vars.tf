@@ -1,6 +1,9 @@
 variable "region" {
   type = string
 }
+variable "az_1" {
+  type = string
+}
 variable "db_name" {
   type = string
 }
@@ -10,6 +13,7 @@ variable "db_user" {
 variable "db_password" {
   type = string
 }
+
 
 data "aws_caller_identity" "current" {}
 

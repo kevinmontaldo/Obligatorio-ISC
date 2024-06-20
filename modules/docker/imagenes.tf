@@ -22,10 +22,10 @@ resource "docker_image" "web" {
 
 resource "docker_registry_image" "db" {
   name = "${local.aws_ecr_url}/db"
-  depends_on = [docker_image.db]
+  depends_on = [docker_image.db, aws_ecr_repository.db]
 }
 
 resource "docker_registry_image" "web" {
   name = "${local.aws_ecr_url}/web"
-  depends_on = [docker_image.web]
+  depends_on = [docker_image.web, aws_ecr_repository.web]
 }

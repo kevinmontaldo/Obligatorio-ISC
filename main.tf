@@ -19,11 +19,12 @@ module "docker" {
   depends_on       = [module.aws]
 }
 module "kubernetes" {
-  source     = "./modules/kubernetes"
-  region     = var.region
-  db_name          = var.db_name
-  db_user          = var.db_user
-  db_password      = var.db_password
-  depends_on = [module.docker]
+  source      = "./modules/kubernetes"
+  region      = var.region
+  db_name     = var.db_name
+  db_user     = var.db_user
+  db_password = var.db_password
+  az_1        = var.az_1
+  depends_on  = [module.docker]
 }
 
