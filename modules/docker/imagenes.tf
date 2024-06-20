@@ -3,11 +3,13 @@ resource "docker_image" "db" {
   name         = "${local.aws_ecr_url}/db"
   build        {
     context    = "./imagenes-docker/mysql57/"
+    build_args = {
+      MYSQL_DATABASE = var.db_name
+      MYSQL_USER = var.db_user
+      MYSQL_PASSWORD = var.db_password
+      MYSQL_ROOT_PASSWORD = var.db_root_password
+    }
   }
-}
-
-resource "docker_registry_image" "db" {
-  name = "${local.aws_ecr_url}/db"
 }
 
 #Imagen para web
@@ -18,6 +20,12 @@ resource "docker_image" "web" {
   }
 }
 
+resource "docker_registry_image" "db" {
+  name = "${local.aws_ecr_url}/db"
+  depends_on = [docker_image.db]
+}
+
 resource "docker_registry_image" "web" {
   name = "${local.aws_ecr_url}/web"
+  depends_on = [docker_image.web]
 }
