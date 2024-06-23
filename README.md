@@ -16,6 +16,7 @@ Cada modulo realiza las actividades del provider correspondiente al modulo.
 ### AWS
 
 El modulo de aws contiene el codigo para implementar la infraestructura de la solucion.
+Se destacan los siguientes puntos:
 
 - Network
   - VPC
@@ -24,23 +25,29 @@ El modulo de aws contiene el codigo para implementar la infraestructura de la so
   - Route table
 - Security group
 - Elastic Container Registry
-  - Repositorio db
   - Repositorio web
 - Elastic Kubernetes Service
   - Cluster
   - Node Group
   - Conexion mediante kubectl
+- Relational Database Service
+  - Instancia de base de datos
+  - Multi-AZ
+  - Backups automatizados
+- Scalable Storage in the Cloud
+  - Versionado habilitado
+  - Lifecycle rules para mover documentos a storage de menor costo
 
 
 ### Docker
 
-El modulo de docker, crea las imagenes de la aplicacion y de la base de datos de forma local y las almacena en un ECR.
-Dichas imagenes estan almacenadas en el directorio imagenes-docker.
+El modulo de docker, crea la imagen de la aplicacion de forma local y la almacena en un ECR.
+Dicha imagen esta almacenada en el directorio imagenes-docker.
 
 ### Kubernetes
 
 El modulo de Kubernetes, utiliza manifiestos para desplegar los recursos en EKS.
-Se utilizaron las siguientes caracteristicas dentro de los manifiestos:
+Se destacan los siguientes puntos:
 
  - LivenessProbe en deployments web
  - ConfigMap para configurar la conexion con la base de datos
@@ -49,31 +56,31 @@ Se utilizaron las siguientes caracteristicas dentro de los manifiestos:
 
 - Configurar perfil en `~/.aws/credentials`
 - Clonar el repositorio ejecutando "git clone https://github.com/kevinmontaldo/Obligatorio-ISC.git"
-- Modificar las variables en terraform.tfvars en caso de ser necesario
+- Modificar las variables en terraform.tfvars dependiendo de sus preferencias
 - Inicializar el repositorio local ejecutando `terraform init`
 - Entrar al directorio y ejecutar "terraform apply --auto-approve"
 - Obtener resultado del despliegue ejecutando "kubectl get all"
 
-El despliegue se hace usando el equipo local para armar las imagenes de los servicios y subirlas al repositorio de ECR.
-
 ### Ejemplo de ejecuccion
 
-kubectl get all
+$ kubectl get all
+NAME                       READY   STATUS      RESTARTS   AGE
+pod/job-mysql-init-c6v64   0/1     Completed   0          3m13s
+pod/web-58f789fd97-5krvv   1/1     Running     0          3m13s
+pod/web-58f789fd97-kr4j5   1/1     Running     0          3m13s
 
-NAME                      READY   STATUS    RESTARTS   AGE
-pod/db-5899b4b849-fl54t   1/1     Running   0          37s
-pod/web-8949b49f5-8jbbc   1/1     Running   0          37s
-pod/web-8949b49f5-clh6c   1/1     Running   0          37s
-
-NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP                                                               PORT(S)        AGE
-service/db           ClusterIP      10.100.195.26    <none>                                                                    3306/TCP       37s
-service/kubernetes   ClusterIP      10.100.0.1       <none>                                                                    443/TCP        6m35s
-service/web          LoadBalancer   10.100.170.133   a0d78a2e3861147aa83a17aa8c58078e-1677858956.us-east-1.elb.amazonaws.com   80:31897/TCP   37s
+NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT(S)        AGE
+service/kubernetes   ClusterIP      10.100.0.1      <none>                                                                    443/TCP        16m
+service/web          LoadBalancer   10.100.48.218   ab2eb36205003482cac28d4ad342a212-1521976150.us-east-1.elb.amazonaws.com   80:30551/TCP   3m13s
 
 NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/db    1/1     1            1           37s
-deployment.apps/web   2/2     2            2           37s
+deployment.apps/web   2/2     2            2           3m13s
 
-NAME                            DESIRED   CURRENT   READY   AGE
-replicaset.apps/db-5899b4b849   1         1         1       37s
-replicaset.apps/web-8949b49f5   2         2         2       37s
+NAME                             DESIRED   CURRENT   READY   AGE
+replicaset.apps/web-58f789fd97   2         2         2       3m13s
+
+NAME                       COMPLETIONS   DURATION   AGE
+job.batch/job-mysql-init   1/1           33s        3m13s
+
+
+

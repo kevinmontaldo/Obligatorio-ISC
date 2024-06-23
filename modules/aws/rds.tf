@@ -19,5 +19,8 @@ resource "aws_db_instance" "rds_obligatorio" {
   skip_final_snapshot  = true
   vpc_security_group_ids = [aws_security_group.sg_db_obligatorio.id]
   db_subnet_group_name = aws_db_subnet_group.db_subnet_group.name
+  backup_retention_period = 7
+  backup_window           = "03:00-05:00"
+  multi_az               = true
   depends_on = [aws_db_subnet_group.db_subnet_group]
 }
