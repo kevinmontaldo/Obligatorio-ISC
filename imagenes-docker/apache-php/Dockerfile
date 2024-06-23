@@ -1,7 +1,9 @@
-FROM orbitmedia/php:5.4-apache
+FROM gramirez23/obligatorio-isc-web
 
-# Instalación de la aplicación
-WORKDIR /var/www/html/
+# Instalacion de app
 RUN git clone https://github.com/Gramirez23/php-ecommerce-obligatorio-ISC.git
 RUN mv php-ecommerce-obligatorio-ISC/* ./
 RUN chmod -R 777 /var/www/html/*
+
+
+

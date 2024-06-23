@@ -42,6 +42,7 @@ variable "db_password" {
 variable "db_root_password" {
   type = string
 }
+
 data "aws_caller_identity" "current" {}
 
 data "aws_ecr_authorization_token" "token" {}

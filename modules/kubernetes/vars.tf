@@ -13,6 +13,10 @@ variable "db_user" {
 variable "db_password" {
   type = string
 }
+variable "db_endpoint" {
+  type = string
+}
+
 
 
 data "aws_caller_identity" "current" {}
