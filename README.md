@@ -65,9 +65,9 @@ Se destacan los siguientes puntos:
 
 ### Documentación
 
-- [Descripción del módulo AWS](module/aws/README.md)
-- [Descripción del módulo Docker](module/docker/README.md)
-- [Descripción del módulo Kubernetes](module/kubernetes/README.md)
+- [Descripción del módulo AWS](modules/aws/README.md)
+- [Descripción del módulo Docker](modules/docker/README.md)
+- [Descripción del módulo Kubernetes](modules/kubernetes/README.md)
 
 
 
