@@ -55,6 +55,8 @@ Se destacan los siguientes puntos:
 ### Instrucciones de uso
 
 - Configurar perfil en `~/.aws/credentials`
+- Instalar Docker en maquina local
+- Instalar cliente de Kubernetes
 - Clonar el repositorio ejecutando "git clone https://github.com/kevinmontaldo/Obligatorio-ISC.git"
 - Modificar las variables en terraform.tfvars dependiendo de sus preferencias
 - Inicializar el repositorio local ejecutando `terraform init`
