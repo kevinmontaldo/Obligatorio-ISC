@@ -41,7 +41,7 @@ Se destacan los siguientes puntos:
 ### Docker
 
 El módulo de Docker crea la imagen de la aplicación de forma local y la almacena en un ECR.
-Dicha imagen está almacenada en el directorio [imagenes-docker/apache-php](imagenes-docker/apache-php).
+Dicha imagen está almacenada en el directorio [imagenes-docker](imagenes-docker/apache-php).
 
 ### Kubernetes
 
