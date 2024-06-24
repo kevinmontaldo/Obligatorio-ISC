@@ -63,26 +63,9 @@ Se destacan los siguientes puntos:
 - Entrar al directorio y ejecutar "terraform apply --auto-approve"
 - Obtener resultado del despliegue ejecutando "kubectl get all"
 
-### Ejemplo de ejecuccion
+### Documentación
 
-$ kubectl get all
-NAME                       READY   STATUS      RESTARTS   AGE
-pod/job-mysql-init-c6v64   0/1     Completed   0          3m13s
-pod/web-58f789fd97-5krvv   1/1     Running     0          3m13s
-pod/web-58f789fd97-kr4j5   1/1     Running     0          3m13s
-
-NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT(S)        AGE
-service/kubernetes   ClusterIP      10.100.0.1      <none>                                                                    443/TCP        16m
-service/web          LoadBalancer   10.100.48.218   ab2eb36205003482cac28d4ad342a212-1521976150.us-east-1.elb.amazonaws.com   80:30551/TCP   3m13s
-
-NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/web   2/2     2            2           3m13s
-
-NAME                             DESIRED   CURRENT   READY   AGE
-replicaset.apps/web-58f789fd97   2         2         2       3m13s
-
-NAME                       COMPLETIONS   DURATION   AGE
-job.batch/job-mysql-init   1/1           33s        3m13s
+- [Descripción del módulo EKS](Documentación/eks.md)
 
 
 
