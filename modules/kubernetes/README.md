@@ -24,7 +24,7 @@ Este módulo configura varios recursos de Kubernetes, incluyendo ConfigMaps, Ser
   - `yaml_body`: Configuración YAML del Deployment, incluyendo el número de réplicas, los contenedores, las sondas de vivacidad y los volúmenes.
   - `depends_on`: Dependencia en el Job `job-mysql-init`.
 
-### Proveedor
+## Proveedor
 Archivo: `provider.tf`
 
 Este archivo configura el proveedor de Terraform para Kubernetes.
