@@ -1,4 +1,4 @@
-# Modulos de Terraform para la infraestructura de AWS
+# Módulos de Terraform para la infraestructura de AWS
 
 Este repositorio contiene módulos de Terraform para desplegar una infraestructura en AWS, incluyendo un clúster EKS, configuraciones de red, instancias RDS y grupos de seguridad. A continuación, se describen los módulos y sus configuraciones.
 
