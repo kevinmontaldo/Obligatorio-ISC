@@ -51,6 +51,12 @@ Se destacan los siguientes puntos:
 - LivenessProbe en deployments web
 - ConfigMap para configurar la conexión con la base de datos
 
+## Documentación
+
+- [Descripción del módulo AWS](modules/aws/README.md)
+- [Descripción del módulo Docker](modules/docker/README.md)
+- [Descripción del módulo Kubernetes](modules/kubernetes/README.md)
+
 ## Instrucciones de uso
 
 1. Configurar perfil en `~/.aws/credentials`.
@@ -61,9 +67,3 @@ Se destacan los siguientes puntos:
 6. Inicializar el repositorio local ejecutando `terraform init`.
 7. Entrar al directorio y ejecutar `terraform apply --auto-approve`.
 8. Obtener resultado del despliegue ejecutando `kubectl get all`.
-
-## Documentación
-
-- [Descripción del módulo AWS](modules/aws/README.md)
-- [Descripción del módulo Docker](modules/docker/README.md)
-- [Descripción del módulo Kubernetes](modules/kubernetes/README.md)
