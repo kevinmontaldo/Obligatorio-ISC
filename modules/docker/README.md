@@ -1,4 +1,4 @@
-# Modulo de Docker para Terraform en AWS
+# Módulos de Docker para Terraform en AWS
 
 Este repositorio contiene módulos de Terraform para desplegar y gestionar imágenes Docker en AWS utilizando ECR (Elastic Container Registry). A continuación, se describen los módulos y sus configuraciones.
 
