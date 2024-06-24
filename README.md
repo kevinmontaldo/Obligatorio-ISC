@@ -65,7 +65,9 @@ Se destacan los siguientes puntos:
 
 ### Documentación
 
-- [Descripción del módulo EKS](Documentación/eks.md)
+- [Descripción del módulo AWS](module/aws/README.md)
+- [Descripción del módulo Docker](module/docker/README.md)
+- [Descripción del módulo Kubernetes](module/kubernetes/README.md)
 
 
 
