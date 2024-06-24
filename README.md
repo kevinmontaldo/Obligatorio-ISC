@@ -55,6 +55,7 @@ Se destacan los siguientes puntos:
 
 - [Descripción del módulo AWS](modules/aws/README.md)
 - [Descripción del módulo Docker](modules/docker/README.md)
+- [Descripción imagen de Docker](imagenes-docker/apache-php/README.md)
 - [Descripción del módulo Kubernetes](modules/kubernetes/README.md)
 
 ## Instrucciones de uso
