@@ -99,9 +99,9 @@ Este archivo define las variables utilizadas en los módulos anteriores.
 - `db_password`: Contraseña para la base de datos.
 
 
-# Uso del Módulo AWS del Repositorio Obligatorio-ISC
+# Uso del módulo AWS en otra infraestructura
 
-Este documento proporciona instrucciones sobre cómo extraer y utilizar el módulo AWS del repositorio [Obligatorio-ISC](https://github.com/kevinmontaldo/Obligatorio-ISC) en su propia infraestructura.
+en este apartado proporcionamos instrucciones sobre cómo extraer y utilizar el módulo AWS del repositorio [Obligatorio-ISC](https://github.com/kevinmontaldo/Obligatorio-ISC) en su propia infraestructura.
 
 ## Requisitos
 
@@ -111,30 +111,28 @@ Antes de comenzar, asegúrese de cumplir con los siguientes requisitos:
 2. **Terraform**: Debe tener Terraform instalado. Puede descargarlo desde [aquí](https://www.terraform.io/downloads.html).
 3. **AWS CLI**: Debe tener AWS CLI instalado y configurado. Puede seguir las instrucciones [aquí](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
-## Requisitos para utilizar únicamente el módulo AWS
+## Extracción del Módulo AWS
 
-Para extraer el módulo AWS del repositorio, siga los siguientes pasos:
+Para extraer y utilizar el módulo AWS del repositorio en su propia infraestructura, siga estos pasos:
 
-1. **Clonar el Repositorio**:
+1. **Clonar el repositorio**:
     ```sh
     git clone https://github.com/kevinmontaldo/Obligatorio-ISC.git
     ```
 
-2. **Navegar al Directorio del Módulo AWS**:
+2. **Navegar al directorio del módulo AWS**:
     ```sh
     cd Obligatorio-ISC/modules/aws
     ```
 
-3. **Copiar los Archivos del Módulo**:
+3. **Copiar los archivos del módulo**:
     Copie los archivos relevantes del módulo AWS a su propio proyecto. Los archivos principales son:
     - `main.tf`
     - `provider.tf`
     - `vars.tf`
     - `terraform.tfvars`
 
-## Configuración
-
-1. **Configurar el Perfil de AWS**:
+4. **Configurar el perfil de AWS**:
     Asegúrese de tener configurado su perfil de AWS en `~/.aws/credentials`:
     ```ini
     [default]
@@ -142,7 +140,7 @@ Para extraer el módulo AWS del repositorio, siga los siguientes pasos:
     aws_secret_access_key = YOUR_SECRET_KEY
     ```
 
-2. **Modificar las Variables**:
+5. **Modificar las variables**:
     Edite el archivo `terraform.tfvars` para adaptar las variables a su entorno y preferencias. Un ejemplo de variables puede ser:
     ```hcl
     region         = "us-east-1"
@@ -157,50 +155,21 @@ Para extraer el módulo AWS del repositorio, siga los siguientes pasos:
     db_endpoint    = "mydb.cleardb.net"
     ```
 
-3. **Inicializar y Aplicar Terraform**:
+6. **Inicializar y aplicar Terraform**:
     Navegue al directorio donde copió los archivos del módulo AWS y ejecute los siguientes comandos:
     ```sh
     terraform init
     terraform plan
-    terraform apply
+    terraform apply 
     ```
 
-## Recursos Configurados
-
-El módulo AWS configurará los siguientes recursos en su cuenta de AWS:
-
-- **Network**
-  - VPC
-  - Subnets
-  - Internet Gateway
-  - Route table
-
-- **Security Group**
-  - Reglas de seguridad para el tráfico de red
-
-- **Elastic Container Registry (ECR)**
-  - Repositorio para almacenar imágenes Docker
-
-- **Elastic Kubernetes Service (EKS)**
-  - Clúster de EKS
-  - Grupo de nodos para el clúster
-  - Configuración para kubectl
-
-- **Relational Database Service (RDS)**
-  - Instancia de base de datos
-  - Implementación de alta disponibilidad (Multi-AZ)
-  - Backups automatizados
-
-- **Scalable Storage in the Cloud**
-  - Buckets S3 con versionado habilitado y reglas de ciclo de vida
-
-## Contacto y Soporte
+## Contacto y soporte
 
 Para cualquier duda o soporte adicional, puede crear un "issue" en el repositorio original o contactar a los integrantes del equipo:
 
 - Kevin Montaldo - 292410
 - Guillermo Ramirez - 292404
+  
+## Derechos reservados
 
-## Licencia
-
-Este proyecto está licenciado bajo los términos de la licencia MIT.
+© 2024 Kevin Montaldo y Guillermo Ramirez.
