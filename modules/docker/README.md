@@ -1,9 +1,3 @@
-# Módulos de Docker para Terraform en AWS
-
-Este repositorio contiene módulos de Terraform para desplegar y gestionar imágenes Docker en AWS utilizando ECR (Elastic Container Registry). A continuación, se describen los módulos y sus configuraciones.
-
-## Módulos
-
 ### ECR (Elastic Container Registry)
 Archivo: `ecr.tf`
 
@@ -31,7 +25,7 @@ Este módulo construye y sube una imagen Docker para una aplicación web utiliza
 ### Provider
 Archivo: `provider.tf`
 
-Este archivo configura el proveedor de Terraform para Docker.
+Este archivo especifica el provider requerido para Kubernetes.
 
 - `terraform.required_providers`: Configuración del proveedor Docker.
   - `docker`: Proveedor Docker especificado por "kreuzwerker/docker".
@@ -50,38 +44,8 @@ Este archivo define las variables utilizadas en los módulos anteriores.
 
 ## Uso del módulo Docker en otra infraestructura
 
-Para extraer y utilizar el módulo Docker del repositorio en su propia infraestructura, siga estos pasos:
+Para utilizar el módulo Kubernetes del repositorio en su propia infraestructura, debe configurar las variables anteriores en un tfvars, a continuacion se muestra un ejemplo:
 
-1. **Clonar el repositorio**:
-    ```sh
-    git clone https://github.com/kevinmontaldo/Obligatorio-ISC.git
-    ```
-
-2. **Navegar al directorio del módulo Docker**:
-    ```sh
-    cd Obligatorio-ISC/modules/docker
-    ```
-
-3. **Copiar los archivos del módulo**:
-   
-    Copie los archivos relevantes del módulo Docker a su propio proyecto. Los archivos principales son:
-    - `ecr.tf`
-    - `imagenes.tf`
-    - `provider.tf`
-    - `vars.tf`
-
-5. **Configurar el perfil de AWS**:
-   
-    Asegúrese de tener configurado su perfil de AWS en `~/.aws/credentials`:
-    ```ini
-    [default]
-    aws_access_key_id = YOUR_ACCESS_KEY
-    aws_secret_access_key = YOUR_SECRET_KEY
-    ```
-
-6. **Modificar las variables**:
-   
-    Edite el archivo `vars.tf` para adaptar las variables a su entorno y preferencias. Un ejemplo de variables puede ser:
     ```hcl
     region         = "us-east-1"
     db_endpoint    = "your-db-endpoint"
@@ -90,10 +54,6 @@ Para extraer y utilizar el módulo Docker del repositorio en su propia infraestr
     db_password    = "your-db-password"
     db_root_password = "your-db-root-password"
     ```
-
-7. **Inicializar y aplicar Terraform**:
-   
-    Navegue al directorio donde copió los archivos del módulo Docker y siga las [instrucciones de uso](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main?tab=readme-ov-file#instrucciones-de-uso) para inicializar y aplicar Terraform.
 
 ## Contacto y soporte
 

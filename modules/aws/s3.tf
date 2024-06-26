@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "documentos_estaticos" {
-  bucket = "documentos-estaticos-obligatorio"
+  bucket = "documentos-estaticos-obligatorio-isc"
   acl    = "private"
 
   versioning {
@@ -38,5 +38,5 @@ resource "aws_s3_bucket" "documentos_estaticos" {
       days = var.noncurrent_expiration_days
     }
   }
-  depends_on = [aws_db_instance.rds_obligatorio, aws_eks_cluster.cluster_obligatorio]
+  depends_on = [aws_db_instance.rds_obligatorio, aws_eks_node_group.node_group_obligatorio]
 }

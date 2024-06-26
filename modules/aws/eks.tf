@@ -20,15 +20,3 @@ resource "aws_eks_node_group" "node_group_obligatorio" {
   }
   subnet_ids = [aws_subnet.subnet_A_obligatorio.id, aws_subnet.subnet_B_obligatorio.id]
 }
-
-
-
-resource "null_resource" "kubectl" {
-  triggers = {
-    always_run = "${timestamp()}"
-  }
-  depends_on = [aws_eks_node_group.node_group_obligatorio]
-  provisioner "local-exec" {
-    command = "aws eks --region ${var.region} update-kubeconfig --name cluster_obligatorio"
-  }
-}

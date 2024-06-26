@@ -58,15 +58,19 @@ Se destacan los siguientes puntos:
 - [Descripción imagen de Docker](imagenes-docker/apache-php/README.md)
 - [Descripción del módulo Kubernetes](modules/kubernetes/README.md)
 
+## Consideraciones
+
+Debido a un problema con terraform, no es posible levantar toda la infraestructura con una sola ejecuccion del comando 'terraform apply', para hacer un despliegue desatendido se debe ejecutar el comando terraform apply -auto-approve 2 veces utlizando el operador ';'
+El primer 'terraform apaply' deberia fallar y el segundo finalizar de forma exitosa.
 ## Instrucciones de uso
 
 1. Configurar perfil en `~/.aws/credentials`.
 2. Instalar Docker en la máquina local.
-3. Instalar cliente de Kubernetes.
+3. Instalar cliente de Kubernetes en la máquina local.
 4. Clonar el repositorio ejecutando `git clone https://github.com/kevinmontaldo/Obligatorio-ISC.git`.
 5. Modificar las variables en `terraform.tfvars` dependiendo de sus preferencias.
 6. Inicializar el repositorio local ejecutando `terraform init`.
-7. Entrar al directorio y ejecutar `terraform apply --auto-approve`.
+7. Entrar al directorio y ejecutar `terraform apply --auto-approve ; terraform apply --auto-approve`.
 8. Obtener resultado del despliegue ejecutando `kubectl get all`.
 
 

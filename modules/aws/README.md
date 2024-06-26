@@ -1,13 +1,7 @@
-# Módulos de Terraform para la infraestructura de AWS
-
-Este repositorio contiene módulos de Terraform para desplegar una infraestructura en AWS, incluyendo un clúster EKS, configuraciones de red, instancias RDS y grupos de seguridad. A continuación, se describen los módulos y sus configuraciones.
-
-## Módulos
-
 ### EKS (Elastic Kubernetes Service)
 Archivo: `eks.tf`
 
-Este módulo configura un clúster EKS y un grupo de nodos asociados. Los recursos principales incluyen:
+Este archivo configura un clúster EKS y un grupo de nodos asociados. Los recursos principales incluyen:
 
 - `aws_eks_cluster.cluster_obligatorio`: Configuración del clúster EKS.
   - `name`: Nombre del clúster.
@@ -28,7 +22,7 @@ Este módulo configura un clúster EKS y un grupo de nodos asociados. Los recurs
 ### Network
 Archivo: `network.tf`
 
-Este módulo configura la red de AWS, incluyendo una VPC y dos subnets.
+Este archivo configura la red de AWS, incluyendo una VPC y dos subnets.
 
 - `aws_vpc.vpc_obligatorio`: Configuración de la VPC.
   - `cidr_block`: Bloque CIDR de la VPC.
@@ -50,7 +44,7 @@ Este módulo configura la red de AWS, incluyendo una VPC y dos subnets.
 ### RDS (Relational Database Service)
 Archivo: `rds.tf`
 
-Este módulo configura una instancia RDS y un grupo de subnets para la base de datos.
+Este archivo configura una instancia RDS y un grupo de subnets para la base de datos.
 
 - `aws_db_subnet_group.db_subnet_group`: Configuración del grupo de subnets para RDS.
   - `name`: Nombre del grupo de subnets.
@@ -73,7 +67,7 @@ Este módulo configura una instancia RDS y un grupo de subnets para la base de d
 ### Security Groups
 Archivo: `security-groups.tf`
 
-Este módulo configura los grupos de seguridad necesarios para la infraestructura.
+Este archivo configura los grupos de seguridad necesarios para la infraestructura.
 
 - `aws_security_group.sg_obligatorio`: Grupo de seguridad principal.
   - `ingress`: Reglas de entrada (e.g., SSH, HTTP).
@@ -101,47 +95,8 @@ Este archivo define las variables utilizadas en los módulos anteriores.
 
 # Uso del módulo AWS en otra infraestructura
 
-en este apartado proporcionamos instrucciones sobre cómo extraer y utilizar el módulo AWS del repositorio [Obligatorio-ISC](https://github.com/kevinmontaldo/Obligatorio-ISC) en su propia infraestructura.
+Para utilizar el módulo Kubernetes del repositorio en su propia infraestructura, debe configurar las variables anteriores en un tfvars, a continuacion se muestra un ejemplo:
 
-## Requisitos
-
-Antes de comenzar, asegúrese de cumplir con los siguientes requisitos:
-
-1. **Cuenta de AWS**: Debe tener una cuenta de AWS con las credenciales configuradas.
-2. **Terraform**: Debe tener Terraform instalado. Puede descargarlo desde [aquí](https://www.terraform.io/downloads.html).
-3. **AWS CLI**: Debe tener AWS CLI instalado y configurado. Puede seguir las instrucciones [aquí](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
-
-## Extracción del Módulo AWS
-
-Para extraer y utilizar el módulo AWS del repositorio en su propia infraestructura, siga estos pasos:
-
-1. **Clonar el repositorio**:
-    ```sh
-    git clone https://github.com/kevinmontaldo/Obligatorio-ISC.git
-    ```
-
-2. **Navegar al directorio del módulo AWS**:
-    ```sh
-    cd Obligatorio-ISC/modules/aws
-    ```
-
-3. **Copiar los archivos del módulo**:
-    Copie los archivos relevantes del módulo AWS a su propio proyecto. Los archivos principales son:
-    - `main.tf`
-    - `provider.tf`
-    - `vars.tf`
-    - `terraform.tfvars`
-
-4. **Configurar el perfil de AWS**:
-    Asegúrese de tener configurado su perfil de AWS en `~/.aws/credentials`:
-    ```ini
-    [default]
-    aws_access_key_id = YOUR_ACCESS_KEY
-    aws_secret_access_key = YOUR_SECRET_KEY
-    ```
-
-5. **Modificar las variables**:
-    Edite el archivo `terraform.tfvars` para adaptar las variables a su entorno y preferencias. Un ejemplo de variables puede ser:
     ```hcl
     region         = "us-east-1"
     vpc_cidr       = "10.0.0.0/16"
@@ -154,10 +109,6 @@ Para extraer y utilizar el módulo AWS del repositorio en su propia infraestruct
     db_password    = "password"
     db_endpoint    = "mydb.cleardb.net"
     ```
-
-7. **Inicializar y aplicar Terraform**:
-   
-    Navegue al directorio donde copió los archivos del módulo AWS y siga las [instrucciones de uso](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main?tab=readme-ov-file#instrucciones-de-uso) para inicializar y aplicar Terraform.
 
 ## Contacto y soporte
 

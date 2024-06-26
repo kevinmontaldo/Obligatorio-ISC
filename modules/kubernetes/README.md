@@ -1,9 +1,3 @@
-# Módulos de Terraform para Kubernetes en AWS
-
-Este repositorio contiene módulos de Terraform para desplegar y gestionar aplicaciones en Kubernetes utilizando EKS (Elastic Kubernetes Service). A continuación, se describen los módulos y sus configuraciones.
-
-## Módulos
-
 ### Despliegues Kubernetes
 Archivo: `deployments.tf`
 
@@ -27,7 +21,7 @@ Este módulo configura varios recursos de Kubernetes, incluyendo ConfigMaps, Ser
 ### Proveedor
 Archivo: `provider.tf`
 
-Este archivo configura el proveedor de Terraform para Kubernetes.
+Este archivo especifica el provider requerido para Kubernetes.
 
 - `terraform.required_providers`: Configuración del proveedor kubectl.
   - `kubectl`: Proveedor kubectl especificado por "gavinbunney/kubectl".
@@ -35,7 +29,7 @@ Este archivo configura el proveedor de Terraform para Kubernetes.
 ### Variables
 Archivo: `vars.tf`
 
-Este archivo define las variables utilizadas en los módulos anteriores.
+Este archivo define las variables utilizadas.
 
 - `region`: Región de AWS.
 - `az_1`: Zona de disponibilidad.
@@ -46,37 +40,8 @@ Este archivo define las variables utilizadas en los módulos anteriores.
 
 ## Uso del módulo Kubernetes en otra infraestructura
 
-Para extraer y utilizar el módulo Kubernetes del repositorio en su propia infraestructura, siga estos pasos:
+Para utilizar el módulo Kubernetes del repositorio en su propia infraestructura, debe configurar las variables anteriores en un tfvars, a continuacion se muestra un ejemplo:
 
-1. **Clonar el repositorio**:
-    ```sh
-    git clone https://github.com/kevinmontaldo/Obligatorio-ISC.git
-    ```
-
-2. **Navegar al directorio del módulo Kubernetes**:
-    ```sh
-    cd Obligatorio-ISC/modules/kubernetes
-    ```
-
-3. **Copiar los archivos del módulo**:
-   
-    Copie los archivos relevantes del módulo Kubernetes a su propio proyecto. Los archivos principales son:
-    - `deployments.tf`
-    - `provider.tf`
-    - `vars.tf`
-
-5. **Configurar el perfil de AWS**:
-   
-    Asegúrese de tener configurado su perfil de AWS en `~/.aws/credentials`:
-    ```ini
-    [default]
-    aws_access_key_id = YOUR_ACCESS_KEY
-    aws_secret_access_key = YOUR_SECRET_KEY
-    ```
-
-6. **Modificar las variables**:
-   
-    Edite el archivo `vars.tf` para adaptar las variables a su entorno y preferencias. Un ejemplo de variables puede ser:
     ```hcl
     region         = "us-east-1"
     az_1           = "us-east-1a"
@@ -85,10 +50,6 @@ Para extraer y utilizar el módulo Kubernetes del repositorio en su propia infra
     db_password    = "your-db-password"
     db_endpoint    = "your-db-endpoint"
     ```
-
-7. **Inicializar y aplicar Terraform**:
-   
-    Navegue al directorio donde copió los archivos del módulo Kubernetes y siga las [instrucciones de uso](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main?tab=readme-ov-file#instrucciones-de-uso) para inicializar y aplicar Terraform.
 
 ## Contacto y soporte
 
