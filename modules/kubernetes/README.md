@@ -43,3 +43,53 @@ Este archivo define las variables utilizadas en los módulos anteriores.
 - `db_user`: Nombre de usuario de la base de datos.
 - `db_password`: Contraseña de la base de datos.
 - `db_endpoint`: Endpoint de la base de datos.
+
+## Uso del módulo Kubernetes en otra infraestructura
+
+Para extraer y utilizar el módulo Kubernetes del repositorio en su propia infraestructura, siga estos pasos:
+
+1. **Clonar el repositorio**:
+    ```sh
+    git clone https://github.com/kevinmontaldo/Obligatorio-ISC.git
+    ```
+
+2. **Navegar al directorio del módulo Kubernetes**:
+    ```sh
+    cd Obligatorio-ISC/modules/kubernetes
+    ```
+
+3. **Copiar los archivos del módulo**:
+   
+    Copie los archivos relevantes del módulo Kubernetes a su propio proyecto. Los archivos principales son:
+    - `deployments.tf`
+    - `provider.tf`
+    - `vars.tf`
+
+5. **Configurar el perfil de AWS**:
+   
+    Asegúrese de tener configurado su perfil de AWS en `~/.aws/credentials`:
+    ```ini
+    [default]
+    aws_access_key_id = YOUR_ACCESS_KEY
+    aws_secret_access_key = YOUR_SECRET_KEY
+    ```
+
+6. **Modificar las variables**:
+   
+    Edite el archivo `vars.tf` para adaptar las variables a su entorno y preferencias. Un ejemplo de variables puede ser:
+    ```hcl
+    region         = "us-east-1"
+    az_1           = "us-east-1a"
+    db_name        = "your-db-name"
+    db_user        = "your-db-user"
+    db_password    = "your-db-password"
+    db_endpoint    = "your-db-endpoint"
+    ```
+
+7. **Inicializar y aplicar Terraform**:
+   
+    Navegue al directorio donde copió los archivos del módulo Kubernetes y siga las [instrucciones de uso](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main?tab=readme-ov-file#instrucciones-de-uso) para inicializar y aplicar Terraform.
+
+## Derechos reservados
+
+© 2024 Kevin Montaldo y Guillermo Ramirez
