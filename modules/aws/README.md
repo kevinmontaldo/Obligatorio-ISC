@@ -93,23 +93,22 @@ Este archivo define las variables utilizadas en los módulos anteriores.
 - `db_password`: Contraseña para la base de datos.
 
 
-# Uso del módulo AWS en otra infraestructura
+## Uso del módulo AWS en otra infraestructura
 
-Para utilizar el módulo AWS del repositorio en su propia infraestructura, debe configurar las variables anteriores en un tfvars, a continuacion se muestra un ejemplo:
+Para utilizar el módulo AWS de este repositorio en su propia infraestructura, debe configurar las variables anteriores en un archivo `.tfvars`. A continuación se muestra un ejemplo:
 
-    ```sh
-    region         = "us-east-1"
-    vpc_cidr       = "10.0.0.0/16"
-    subnet_A       = "10.0.1.0/24"
-    subnet_B       = "10.0.2.0/24"
-    az_1           = "us-east-1a"
-    az_2           = "us-east-1b"
-    db_name        = "mydatabase"
-    db_user        = "admin"
-    db_password    = "password"
-    db_endpoint    = "mydb.cleardb.net"
-    ```
-
+```hcl
+region         = "us-east-1"
+vpc_cidr       = "10.0.0.0/16"
+subnet_A       = "10.0.1.0/24"
+subnet_B       = "10.0.2.0/24"
+az_1           = "us-east-1a"
+az_2           = "us-east-1b"
+db_name        = "mydatabase"
+db_user        = "admin"
+db_password    = "password"
+db_endpoint    = "mydb.cleardb.net"
+ ```
 ## Contacto y soporte
 
 Para cualquier duda o soporte adicional, puede crear un "issue" en el repositorio original o contactar a los integrantes del equipo:
