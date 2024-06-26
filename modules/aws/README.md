@@ -97,7 +97,7 @@ Este archivo define las variables utilizadas en los módulos anteriores.
 
 Para utilizar el módulo AWS del repositorio en su propia infraestructura, debe configurar las variables anteriores en un tfvars, a continuacion se muestra un ejemplo:
 
-    ```hcl
+    ```sh
     region         = "us-east-1"
     vpc_cidr       = "10.0.0.0/16"
     subnet_A       = "10.0.1.0/24"
