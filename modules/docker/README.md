@@ -95,10 +95,14 @@ Para extraer y utilizar el módulo Docker del repositorio en su propia infraestr
    
     Navegue al directorio donde copió los archivos del módulo Docker y siga las [instrucciones de uso](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main?tab=readme-ov-file#instrucciones-de-uso) para inicializar y aplicar Terraform.
 
-Contacto y soporte
+## Contacto y soporte
+
 Para cualquier duda o soporte adicional, puede crear un "issue" en el repositorio original o contactar a los integrantes del equipo:
 
 Kevin Montaldo - 292410
 Guillermo Ramirez - 292404
-Derechos reservados
+
+
+## Derechos reservados
+
 © 2024 Kevin Montaldo y Guillermo Ramirez.
