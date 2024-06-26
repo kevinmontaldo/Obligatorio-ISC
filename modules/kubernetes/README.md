@@ -40,7 +40,9 @@ Este archivo define las variables utilizadas.
 
 ## Uso del módulo Kubernetes en otra infraestructura
 
-Para utilizar el módulo Kubernetes del repositorio en su propia infraestructura, debe configurar las variables anteriores en un tfvars, a continuacion se muestra un ejemplo:
+Para utilizar el módulo Kubernetes de este repositorio en su propia infraestructura, es fundamental que tenga ya tenga los recursos en AWS ya desplegados. Puede tomar como referencia el despliegue del [módulo AWS](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main/modules/aws) para asegurarse de que todos los componentes necesarios estén presentes.
+
+debe configurar las variables anteriores en un tfvars, a continuacion se muestra un ejemplo:
 
   ```hcl
     region         = "us-east-1"
