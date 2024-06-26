@@ -99,8 +99,8 @@ Para extraer y utilizar el módulo Docker del repositorio en su propia infraestr
 
 Para cualquier duda o soporte adicional, puede crear un "issue" en el repositorio original o contactar a los integrantes del equipo:
 
-Kevin Montaldo - 292410
-Guillermo Ramirez - 292404
+Kevin Montaldo - km292410@fi365.ort.edu.uy
+Guillermo Ramirez - gr292404@fi365.ort.edu.uy
 
 
 ## Derechos reservados
