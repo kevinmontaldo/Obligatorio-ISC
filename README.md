@@ -68,3 +68,17 @@ Se destacan los siguientes puntos:
 6. Inicializar el repositorio local ejecutando `terraform init`.
 7. Entrar al directorio y ejecutar `terraform apply --auto-approve`.
 8. Obtener resultado del despliegue ejecutando `kubectl get all`.
+
+
+## Contacto y soporte
+
+Para cualquier duda o soporte adicional, puede crear un "issue" en el repositorio original o contactar a los integrantes del equipo:
+
+Kevin Montaldo - km292410@fi365.ort.edu.uy
+
+Guillermo Ramirez - gr292404@fi365.ort.edu.uy
+
+
+## Derechos reservados
+
+© 2024 Kevin Montaldo y Guillermo Ramirez.
