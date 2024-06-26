@@ -63,13 +63,15 @@ Para extraer y utilizar el módulo Docker del repositorio en su propia infraestr
     ```
 
 3. **Copiar los archivos del módulo**:
+   
     Copie los archivos relevantes del módulo Docker a su propio proyecto. Los archivos principales son:
     - `ecr.tf`
     - `imagenes.tf`
     - `provider.tf`
     - `vars.tf`
 
-4. **Configurar el perfil de AWS**:
+5. **Configurar el perfil de AWS**:
+   
     Asegúrese de tener configurado su perfil de AWS en `~/.aws/credentials`:
     ```ini
     [default]
@@ -77,7 +79,8 @@ Para extraer y utilizar el módulo Docker del repositorio en su propia infraestr
     aws_secret_access_key = YOUR_SECRET_KEY
     ```
 
-5. **Modificar las variables**:
+6. **Modificar las variables**:
+   
     Edite el archivo `vars.tf` para adaptar las variables a su entorno y preferencias. Un ejemplo de variables puede ser:
     ```hcl
     region         = "us-east-1"
@@ -88,7 +91,8 @@ Para extraer y utilizar el módulo Docker del repositorio en su propia infraestr
     db_root_password = "your-db-root-password"
     ```
 
-6. **Inicializar y aplicar Terraform**:
+7. **Inicializar y aplicar Terraform**:
+   
     Navegue al directorio donde copió los archivos del módulo Docker y siga las [instrucciones de uso](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main?tab=readme-ov-file#instrucciones-de-uso) para inicializar y aplicar Terraform.
 
 ## Derechos reservados
