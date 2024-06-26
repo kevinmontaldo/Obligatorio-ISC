@@ -52,7 +52,7 @@ metadata:
     app: web
   name: web
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: web
