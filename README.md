@@ -8,7 +8,8 @@ Integrantes:
 
 - Kevin Montaldo - 292410
 - Guillermo Ramirez - 292404
-
+## Diagrama general
+![Diagrrama AWS](https://github.com/kevinmontaldo/Obligatorio-ISC/blob/main/Diagrama%20AWS.drawio.png)
 ## Módulos
 
 Cada módulo realiza las actividades del provider correspondiente al módulo.
