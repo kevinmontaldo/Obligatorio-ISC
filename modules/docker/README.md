@@ -44,10 +44,9 @@ Este archivo define las variables utilizadas en los módulos anteriores.
 
 ## Uso del módulo Docker en otra infraestructura
 
-Para utilizar el módulo Docker del repositorio en su propia infraestructura
+Para utilizar el módulo Docker de este repositorio en su propia infraestructura, siga estos pasos:
 
-**Modificar las variables**:
-    Edite el archivo `vars.tf` para adaptar las variables a su entorno y preferencias. Un ejemplo de variables puede ser:
+1. **Modificar las variables**: Edite el archivo `vars.tf` para adaptar las variables a su entorno y preferencias. Un ejemplo de variables puede ser:
     ```hcl
     region         = "us-east-1"
     az_1           = "us-east-1a"
