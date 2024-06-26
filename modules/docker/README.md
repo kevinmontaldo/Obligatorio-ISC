@@ -44,15 +44,17 @@ Este archivo define las variables utilizadas en los módulos anteriores.
 
 ## Uso del módulo Docker en otra infraestructura
 
-Para utilizar el módulo Kubernetes del repositorio en su propia infraestructura, debe configurar las variables anteriores en un tfvars, a continuacion se muestra un ejemplo:
+Para utilizar el módulo Docker del repositorio en su propia infraestructura
 
+**Modificar las variables**:
+    Edite el archivo `vars.tf` para adaptar las variables a su entorno y preferencias. Un ejemplo de variables puede ser:
     ```hcl
     region         = "us-east-1"
-    db_endpoint    = "your-db-endpoint"
+    az_1           = "us-east-1a"
     db_name        = "your-db-name"
     db_user        = "your-db-user"
     db_password    = "your-db-password"
-    db_root_password = "your-db-root-password"
+    db_endpoint    = "your-db-endpoint"
     ```
 
 ## Contacto y soporte
