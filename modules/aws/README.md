@@ -156,12 +156,8 @@ Para extraer y utilizar el módulo AWS del repositorio en su propia infraestruct
     ```
 
 6. **Inicializar y aplicar Terraform**:
-    Navegue al directorio donde copió los archivos del módulo AWS y ejecute los siguientes comandos:
-    ```sh
-    terraform init
-    terraform plan
-    terraform apply 
-    ```
+    
+     Navegue al directorio donde copió los archivos del módulo AWS y siga las [instrucciones de uso](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main?tab=readme-ov-file#instrucciones-de-uso) para inicializar y aplicar Terraform.
 
 ## Contacto y soporte
 
