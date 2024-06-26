@@ -42,14 +42,14 @@ Este archivo define las variables utilizadas.
 
 Para utilizar el módulo Kubernetes del repositorio en su propia infraestructura, debe configurar las variables anteriores en un tfvars, a continuacion se muestra un ejemplo:
 
-    ```hcl
+  ```hcl
     region         = "us-east-1"
     az_1           = "us-east-1a"
     db_name        = "your-db-name"
     db_user        = "your-db-user"
     db_password    = "your-db-password"
     db_endpoint    = "your-db-endpoint"
-    ```
+  ```
 
 ## Contacto y soporte
 
