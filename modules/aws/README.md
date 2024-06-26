@@ -155,17 +155,19 @@ Para extraer y utilizar el módulo AWS del repositorio en su propia infraestruct
     db_endpoint    = "mydb.cleardb.net"
     ```
 
-6. **Inicializar y aplicar Terraform**:
-    
-     Navegue al directorio donde copió los archivos del módulo AWS y siga las [instrucciones de uso](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main?tab=readme-ov-file#instrucciones-de-uso) para inicializar y aplicar Terraform.
+7. **Inicializar y aplicar Terraform**:
+   
+    Navegue al directorio donde copió los archivos del módulo AWS y siga las [instrucciones de uso](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main?tab=readme-ov-file#instrucciones-de-uso) para inicializar y aplicar Terraform.
 
 ## Contacto y soporte
 
 Para cualquier duda o soporte adicional, puede crear un "issue" en el repositorio original o contactar a los integrantes del equipo:
 
-- Kevin Montaldo - 292410
-- Guillermo Ramirez - 292404
-  
+Kevin Montaldo - km292410@fi365.ort.edu.uy
+
+Guillermo Ramirez - gr292404@fi365.ort.edu.uy
+
+
 ## Derechos reservados
 
 © 2024 Kevin Montaldo y Guillermo Ramirez.
