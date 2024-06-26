@@ -90,6 +90,15 @@ Para extraer y utilizar el módulo Kubernetes del repositorio en su propia infra
    
     Navegue al directorio donde copió los archivos del módulo Kubernetes y siga las [instrucciones de uso](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main?tab=readme-ov-file#instrucciones-de-uso) para inicializar y aplicar Terraform.
 
+## Contacto y soporte
+
+Para cualquier duda o soporte adicional, puede crear un "issue" en el repositorio original o contactar a los integrantes del equipo:
+
+Kevin Montaldo - km292410@fi365.ort.edu.uy
+
+Guillermo Ramirez - gr292404@fi365.ort.edu.uy
+
+
 ## Derechos reservados
 
-© 2024 Kevin Montaldo y Guillermo Ramirez
+© 2024 Kevin Montaldo y Guillermo Ramirez.
