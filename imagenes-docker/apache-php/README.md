@@ -1,4 +1,4 @@
-# Imagen Docker para Aplicación Web
+# Imagen Docker para aplicación web
 
 Este repositorio contiene los archivos necesarios para construir una imagen Docker para una aplicación web que se conecta a una base de datos MySQL. A continuación, se describen los archivos y su propósito.
 
