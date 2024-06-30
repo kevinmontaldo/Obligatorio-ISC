@@ -4,7 +4,7 @@ Archivo: `ecr.tf`
 Este módulo configura un repositorio en ECR para almacenar las imágenes Docker.
 
 - `aws_ecr_repository.web`: Configuración del repositorio ECR.
-  - `force_delete`: Forzar eliminación del repositorio.
+  - `force_delete`: Forzar eliminación del repositorio en caso que se destruya el código de Terraform.
   - `name`: Nombre del repositorio.
 
 ### Imágenes Docker
@@ -16,7 +16,7 @@ Este módulo construye y sube una imagen Docker para una aplicación web utiliza
   - `name`: Nombre de la imagen en el repositorio ECR.
   - `build`: Configuración de construcción.
     - `context`: Directorio de contexto para la construcción de la imagen.
-    - `build_args`: Argumentos de construcción para la imagen (variables de entorno).
+    - `build_args`: Define los argumentos de construcción que se pasarán al Dockerfile durante el proceso de construcción.
 
 - `docker_registry_image.web`: Configuración para subir la imagen al registro Docker.
   - `name`: Nombre de la imagen en el repositorio ECR.
@@ -40,7 +40,6 @@ Este archivo define las variables utilizadas en los módulos anteriores.
 - `db_name`: Nombre de la base de datos.
 - `db_user`: Nombre de usuario de la base de datos.
 - `db_password`: Contraseña de la base de datos.
-- `db_root_password`: Contraseña del usuario root de la base de datos.
 
 ## Uso del módulo Docker en otra infraestructura
 
