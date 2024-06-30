@@ -12,7 +12,7 @@ Integrantes:
 ![Diagrrama AWS](https://github.com/kevinmontaldo/Obligatorio-ISC/blob/main/Diagrama%20AWS.drawio.png)
 ## Módulos
 
-Cada módulo realiza las actividades del provider correspondiente al módulo.
+Cada módulo realiza las actividades del provider correspondiente al mismo.
 
 ### AWS
 
@@ -61,8 +61,9 @@ Se destacan los siguientes puntos:
 
 ## Consideraciones
 
-Debido a un problema con terraform, no es posible levantar toda la infraestructura con una sola ejecuccion del comando 'terraform apply', para hacer un despliegue desatendido se debe ejecutar el comando terraform apply -auto-approve 2 veces utlizando el operador ';'
-El primer 'terraform apaply' deberia fallar y el segundo finalizar de forma exitosa.
+Debido a un problema con terraform, no es posible levantar toda la infraestructura con una sola ejecuccion del comando `terraform apply`, para hacer un despliegue desatendido se debe ejecutar el comando `terraform apply --auto-approve` 2 veces utlizando el operador `;`
+El primer `terraform apply` deberia fallar y el segundo finalizar de forma exitosa.
+
 ## Instrucciones de uso
 
 1. Configurar perfil en `~/.aws/credentials`.
