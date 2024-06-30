@@ -52,15 +52,15 @@ Este archivo configura una instancia RDS y un grupo de subnets para la base de d
 
 - `aws_db_instance.rds_obligatorio`: Configuración de la instancia RDS.
   - `identifier`: Identificador de la instancia.
-  - `engine`: Motor de base de datos (e.g., MySQL).
+  - `engine`: Motor de base de datos.
   - `instance_class`: Clase de la instancia.
-  - `allocated_storage`: Almacenamiento asignado (en GB).
+  - `allocated_storage`: Almacenamiento asignado.
   - `name`: Nombre de la base de datos.
   - `username`: Nombre de usuario.
   - `password`: Contraseña.
   - `parameter_group_name`: Nombre del grupo de parámetros.
   - `db_subnet_group_name`: Nombre del grupo de subnets.
-  - `multi_az`: Si la instancia es multi-AZ.
+  - `multi_az`: Habilitar multi-AZ.
   - `publicly_accessible`: Si la instancia es públicamente accesible.
   - `vpc_security_group_ids`: IDs de los grupos de seguridad.
 
@@ -69,12 +69,12 @@ Archivo: `security-groups.tf`
 
 Este archivo configura los grupos de seguridad necesarios para la infraestructura.
 
-- `aws_security_group.sg_obligatorio`: Grupo de seguridad principal.
-  - `ingress`: Reglas de entrada (e.g., SSH, HTTP).
+- `aws_security_group.sg_obligatorio`: Grupo de seguridad para instancias.
+  - `ingress`: Reglas de entrada.
   - `egress`: Reglas de salida.
 
 - `aws_security_group.sg_db_obligatorio`: Grupo de seguridad para la base de datos.
-  - `ingress`: Reglas de entrada (e.g., SSH, MySQL).
+  - `ingress`: Reglas de entrada.
   - `egress`: Reglas de salida.
 
 ### Variables
