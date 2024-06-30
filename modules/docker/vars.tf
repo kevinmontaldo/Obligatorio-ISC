@@ -14,9 +14,6 @@ variable "db_user" {
 variable "db_password" {
   type = string
 }
-variable "db_root_password" {
-  type = string
-}
 
 data "aws_caller_identity" "current" {}
 
