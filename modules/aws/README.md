@@ -77,6 +77,44 @@ Este archivo configura los grupos de seguridad necesarios para la infraestructur
   - `ingress`: Reglas de entrada.
   - `egress`: Reglas de salida.
 
+### S3 (Simple Storage Service)
+Archivo: `s3.tf`
+
+Este archivo configura un bucket S3 para almacenar documentos estáticos.
+
+- `aws_s3_bucket.documentos_estaticos`: Configuración del bucket S3.
+  - `bucket`: Nombre del bucket.
+  - `acl`: Política de control de acceso.
+  
+  - `versioning`: Configuración del versionado.
+    - `enabled`: Habilitar versionado.
+
+  - `lifecycle_rule`: Configuración de reglas de ciclo de vida.
+    - `id`: Identificador de la regla.
+    - `enabled`: Habilitar la regla.
+    
+    - `transition`: Transiciones de objetos actuales.
+      - `days`: Días para la transición a `STANDARD_IA`.
+      - `storage_class`: Clase de almacenamiento (`STANDARD_IA`).
+      - `days`: Días para la transición a `GLACIER`.
+      - `storage_class`: Clase de almacenamiento (`GLACIER`).
+
+    - `noncurrent_version_transition`: Transiciones de versiones no actuales.
+      - `days`: Días para la transición a `STANDARD_IA`.
+      - `storage_class`: Clase de almacenamiento (`STANDARD_IA`).
+      - `days`: Días para la transición a `GLACIER`.
+      - `storage_class`: Clase de almacenamiento (`GLACIER`).
+
+    - `expiration`: Expiración de objetos actuales.
+      - `days`: Días hasta la expiración.
+
+    - `noncurrent_version_expiration`: Expiración de versiones no actuales.
+      - `days`: Días hasta la expiración.
+
+- `depends_on`: Dependencias del bucket S3.
+  - `aws_db_instance.rds_obligatorio`: Dependencia de la instancia RDS.
+  - `aws_eks_node_group.node_group_obligatorio`: Dependencia del grupo de nodos EKS.
+
 ### Variables
 Archivo: `vars.tf`
 
