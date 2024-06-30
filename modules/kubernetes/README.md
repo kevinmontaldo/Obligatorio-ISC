@@ -15,7 +15,7 @@ Este módulo configura varios recursos de Kubernetes, incluyendo ConfigMaps, Ser
   - `depends_on`: Dependencia en el Service `web-svc`.
 
 - `kubectl_manifest.web`: Configuración de un Deployment para la aplicación web.
-  - `yaml_body`: Configuración YAML del Deployment, incluyendo el número de réplicas, los contenedores, las sondas de vivacidad y los volúmenes.
+  - `yaml_body`: Configuración YAML del Deployment, incluyendo el número de réplicas, los contenedores, LivenessProbe y los volúmenes.
   - `depends_on`: Dependencia en el Job `job-mysql-init`.
 
 ### Proveedor
@@ -42,7 +42,7 @@ Este archivo define las variables utilizadas.
 
 Para utilizar el módulo Kubernetes de este repositorio en su propia infraestructura, es fundamental que tenga ya tenga los recursos en AWS ya desplegados. Puede tomar como referencia el despliegue del [módulo AWS](https://github.com/kevinmontaldo/Obligatorio-ISC/tree/main/modules/aws) para asegurarse de que todos los componentes necesarios estén presentes.
 
-debe configurar las variables anteriores en un tfvars, a continuacion se muestra un ejemplo:
+debe configurar las variables anteriores en un .tfvars, a continuacion se muestra un ejemplo:
 
   ```hcl
     region         = "us-east-1"
