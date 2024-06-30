@@ -12,8 +12,8 @@ az_2     = "us-east-1b"    # Region de la Avaliability Zone 2
 
 db_name          = "db_obligatorio" # Nombre de la base de datos
 db_user          = "user"           # Usuario de la base de datos
-db_password      = "user1234567"    # Contraseña del usuario
-db_root_password = "root1234567"    # Contraseña del usuario Root
+db_password      = "user1234567"    # ContraseÃ±a del usuario
+db_root_password = "root1234567"    # ContraseÃ±a del usuario Root
 
 # S3
 
@@ -23,8 +23,3 @@ noncurrent_transition_days_to_standard = 30   # Cantidad de dias para pasar arch
 noncurrent_transition_days_to_glacier  = 90   # Cantidad de dias para pasar archivos con versiones anteriores a S3 Glacier
 current_expiration_days                = 3650 # Cantidad de dias para eliminar archivos
 noncurrent_expiration_days             = 365  # Cantidad de dias para eliminar archivos con versiones anteriores
-
-# KUBERNETES
-
-kube_config_path = "kconfig"                  # Ruta al archivo de configuración de kubeconfig
-
